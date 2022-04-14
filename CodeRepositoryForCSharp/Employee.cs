@@ -2,7 +2,7 @@
 
 namespace CodeRepositoryForCSharp
 {
-    class Employee
+    class Employee : IEmployee
     {
         public List<Employee>GetEmployees()
         {
