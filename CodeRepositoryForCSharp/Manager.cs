@@ -4,7 +4,12 @@ namespace CodeRepositoryForCSharp
 {
     class Manager
     {
-        private readonly Employee employee = new Employee();
+        private readonly IEmployee employee;
+
+        public Manager(IEmployee employee)
+        {
+            this.employee = employee;
+        }
 
         public List<Employee> GetStaff()
         {
