@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Linq;
+//using Microsoft.Extensions.DependencyInjection;
+
 
 namespace CodeRepositoryForCSharp
 {
@@ -8,20 +8,28 @@ namespace CodeRepositoryForCSharp
     {
         static void Main(string[] args)
         {
-            var a = Enumerable.Range(0, 5).Select(x => DisplayEvenNum(x));
+            IEmployee employee = new Employee();
 
-            foreach (var n in a);
-            foreach (var n in a);
-        }
+            var manager = new Manager(employee);
 
-        static int DisplayEvenNum(int n)
-        {
-            if(n % 2 == 0)
+            foreach (var staff in manager.GetStaff())
             {
-                Console.Write($"{n}");
+                Console.WriteLine(staff.No);
             }
 
-            return n;
+            //var services = new ServiceCollection();
+            //services.AddSingleton<IEmployee>(new Employee());
+            //var provider = services.BuildServiceProvider();
+
+            //var employee = provider.GetRequiredService<IEmployee>();
+            //var manager = new Manager(employee);
+
+            //foreach (var staff in manager.GetStaff())
+            //{
+            //    Console.WriteLine(staff.No);
+            //}
+
         }
-    }}
+    }
+}
 
