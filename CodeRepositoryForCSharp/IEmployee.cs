@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CodeRepositoryForCSharp
 {
-    interface IEmployee
+    public interface IEmployee
     {
         public List<Employee> GetEmployees();
     }
