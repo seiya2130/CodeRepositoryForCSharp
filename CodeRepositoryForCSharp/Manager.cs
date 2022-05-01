@@ -2,7 +2,7 @@
 
 namespace CodeRepositoryForCSharp
 {
-    class Manager
+    public class Manager
     {
         private readonly IEmployee employee;
 
