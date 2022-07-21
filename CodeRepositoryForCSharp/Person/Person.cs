@@ -7,17 +7,16 @@ namespace CodeRepositoryForCSharp.Person
     class Person : IPerson
     {
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Name { get; set; }
 
-        public Person(string firstName, string lastName)
+        public Person(int id, string name)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            Id = id;
+            Name = name;
         }
-        public string GetFullName()
+        public void Greeting()
         {
-            return $"{FirstName} {LastName}";
+            Console.WriteLine($"Hello, I'm {Name}");
         }
     }
 }

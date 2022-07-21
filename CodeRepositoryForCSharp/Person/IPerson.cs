@@ -6,6 +6,6 @@ namespace CodeRepositoryForCSharp
 {
     interface IPerson
     {
-        string GetFullName();
+        void Greeting();
     }
 }

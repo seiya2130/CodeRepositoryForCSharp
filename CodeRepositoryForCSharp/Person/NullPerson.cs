@@ -6,11 +6,9 @@ namespace CodeRepositoryForCSharp.Person
 {
     class NullPerson : IPerson
     {
-        const string NULL_VALUE = "";
-
-        public string GetFullName()
+        public void Greeting()
         {
-            return NULL_VALUE;
+            //何もしない
         }
     }
 }
