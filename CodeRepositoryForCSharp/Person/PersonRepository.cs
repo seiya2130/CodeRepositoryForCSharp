@@ -9,7 +9,11 @@ namespace CodeRepositoryForCSharp.Person
     {
         public IPerson GetPerson(int id)
         {
-            var persons = new List<Person> { };
+            var persons = new List<Person>
+            {
+                //new Person(id: 1, name: "Bob")
+            };
+
             IPerson person = persons.Find(x => x.Id == id);
 
             if (person == null)

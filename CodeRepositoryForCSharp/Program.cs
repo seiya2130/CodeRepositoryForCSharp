@@ -10,7 +10,7 @@ namespace CodeRepositoryForCSharp
         static void Main(string[] args)
         {
             var person = new PersonRepository().GetPerson(1);
-            Console.WriteLine(person.GetFullName());
+            person.Greeting();
         }
     }
 }
