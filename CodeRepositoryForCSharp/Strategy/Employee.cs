@@ -7,10 +7,10 @@ namespace CodeRepositoryForCSharp.Strategy
     class Employee
     {
         private int Id;
-        private WorkStatus WorkStatus;
+        private IWorkStatus WorkStatus;
         private Salary Salary;
 
-        public Employee(int id, WorkStatus workStatus)
+        public Employee(int id, IWorkStatus workStatus)
         {
             Id = id;
             WorkStatus = workStatus;
