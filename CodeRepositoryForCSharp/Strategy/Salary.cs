@@ -12,23 +12,11 @@ namespace CodeRepositoryForCSharp.Strategy
 
         }
 
-        public double GetSalary(int userId, WorkStatus workStatus)
+        public double GetSalary(int userId, IWorkStatus workStatus)
         {
             var salary = (double)200_000;
 
-            switch (workStatus)
-            {
-                case WorkStatus.Full:
-                    break;
-                case WorkStatus.Short:
-                    salary = salary * 0.8;
-                    break;
-                case WorkStatus.Leave:
-                    salary = salary * 0.6;
-                    break;
-            }
-
-            return salary;
+            return workStatus.CalculateSalary(salary);
         }
     }
 }

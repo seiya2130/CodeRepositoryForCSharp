@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Channels;
 using CodeRepositoryForCSharp.Person;
+using CodeRepositoryForCSharp.Strategy;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CodeRepositoryForCSharp
@@ -9,8 +11,18 @@ namespace CodeRepositoryForCSharp
     {
         static void Main(string[] args)
         {
-            var employee = new Strategy.Employee(1, WorkStatus.Full);
-            employee.DisplaySalary();
+            var employeeDic = new Dictionary<int, IWorkStatus>()
+            {
+                { 1, new Full() },
+                { 2, new Short() },
+                { 3, new Leave() },
+            };
+
+            foreach (var employee in employeeDic)
+            {
+                var e = new Strategy.Employee(employee.Key, employee.Value);
+                e.DisplaySalary();
+            }
         }
     }
 }
