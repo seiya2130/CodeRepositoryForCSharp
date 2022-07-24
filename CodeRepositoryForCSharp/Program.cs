@@ -9,8 +9,8 @@ namespace CodeRepositoryForCSharp
     {
         static void Main(string[] args)
         {
-            var person = new PersonRepository().GetPerson(1);
-            person.Greeting();
+            var employee = new Strategy.Employee(1, WorkStatus.Full);
+            employee.DisplaySalary();
         }
     }
 }
