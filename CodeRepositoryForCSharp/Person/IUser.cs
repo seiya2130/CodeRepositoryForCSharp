@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CodeRepositoryForCSharp
 {
-    interface IPerson
+    interface IUser
     {
         void Greeting();
     }

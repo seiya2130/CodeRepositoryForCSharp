@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CodeRepositoryForCSharp.Person
 {
-    class NullPerson : IPerson
+    class NullUser : IUser
     {
         public void Greeting()
         {
