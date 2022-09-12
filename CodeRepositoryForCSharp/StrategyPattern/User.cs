@@ -8,7 +8,7 @@ namespace CodeRepositoryForCSharp.StrategyPattern
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public UserType UserType { get; set; }
+        public IUserType UserType { get; set; }
         public List<SkillMenu> SkillMenuList { get; set; }
         public List<EvaluationMenu> EvaluationMenuList { get; set; }
 
@@ -24,28 +24,7 @@ namespace CodeRepositoryForCSharp.StrategyPattern
 
         public void GetSkillMenu()
         {
-            switch (UserType)
-            {
-                case UserType.Normal:
-                    SkillMenuList.Add(SkillMenu.Self);
-                    break;
-                case UserType.Admin:
-                    SkillMenuList.Add(SkillMenu.Analysis);
-                    SkillMenuList.Add(SkillMenu.Setting);
-                    break;
-            }
-        }
-        public void GetEvaluationMenu()
-        {
-            switch (UserType)
-            {
-                case UserType.Normal:
-                    EvaluationMenuList.Add(EvaluationMenu.Request);
-                    break;
-                case UserType.Admin:
-                    EvaluationMenuList.Add(EvaluationMenu.Setting);
-                    break;
-            }
+            SkillMenuList =  UserType.GetSkillMenu();
         }
     }
 
