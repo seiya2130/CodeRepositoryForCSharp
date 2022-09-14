@@ -4,7 +4,7 @@ namespace CodeRepositoryForCSharp
 {
     public class Employee : IEmployee
     {
-        public int No;
+        public string No;
         public List<Employee>GetEmployees()
         {
             var employeeList = new List<Employee>();
@@ -12,7 +12,7 @@ namespace CodeRepositoryForCSharp
             //DBから従業員を10人取得したと仮定する
             for (int i = 0; i < 10; i++)
             {
-                employeeList.Add(new Employee() { No = i });
+                employeeList.Add(new Employee() { No = i.ToString() });
             }
 
             return employeeList;
