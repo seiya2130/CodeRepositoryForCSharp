@@ -15,8 +15,7 @@ namespace Test
             IEmployee employeeMock = new MockEmployee();
             var manager = new Manager(employeeMock);
 
-            Assert.AreEqual(manager.GetStaff().Count, 5);
-
+            Assert.AreEqual(10, manager.GetManagerEmployees().Count);
         }
     }
 }

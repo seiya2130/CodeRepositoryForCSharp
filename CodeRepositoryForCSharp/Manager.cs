@@ -12,9 +12,9 @@ namespace CodeRepositoryForCSharp
             this.employee = employee;
         }
 
-        public List<Employee> GetStaff()
+        public List<Employee> GetManagerEmployees()
         {
-            return employee.GetEmployees().Where(x => x.No.StartsWith("S")).ToList();
+            return employee.GetEmployees().Where(x => x.No.StartsWith("M")).ToList();
         }
     }
 }

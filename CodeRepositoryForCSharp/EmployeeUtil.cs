@@ -12,7 +12,7 @@ namespace CodeRepositoryForCSharp
             //DBから従業員を10人取得したと仮定する
             for (int i = 0; i < 10; i++)
             {
-                employeeList.Add(new Employee() { No = i });
+                employeeList.Add(new Employee() { No = i.ToString() });
             }
 
             return employeeList;
