@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NUnitTestProject
 {
-    public class MockEmployee : IEmployee
+    class MockEmployee : IEmployee
     {
         public List<Employee> GetEmployees()
         {
@@ -13,7 +13,7 @@ namespace NUnitTestProject
 
             for (int i = 0; i < 10; i++)
             {
-                employeeMock.Add(new Employee() { No = i });
+                employeeMock.Add(new Employee() { No = "M" + i });
             }
 
             return employeeMock;
@@ -29,7 +29,7 @@ public class MockEmployee : IEmployee
 
         for (int i = 0; i < 10; i++)
         {
-            employeeMock.Add(new Employee() { No = i });
+            employeeMock.Add(new Employee() { No = "M" + i });
         }
 
         return employeeMock;
