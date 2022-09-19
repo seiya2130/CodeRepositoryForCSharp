@@ -7,11 +7,15 @@ namespace CodeRepositoryForCSharp.CQS
     class Point
     {
         int ThanksPoint { get; set; }
+        int ProfessionalPoint { get; set; }
+        int SupportPoint { get; set; }
 
-        public int AddThanksPoint(int addPoint)
+        int TotalPoint { get; set; }
+
+        public int AddTotalPoint(int addPoint)
         {
-            ThanksPoint += addPoint;
-            return  ThanksPoint;
+            TotalPoint = ThanksPoint + ProfessionalPoint + SupportPoint + addPoint;
+            return  TotalPoint;
         }
     }
 }
