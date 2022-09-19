@@ -12,10 +12,14 @@ namespace CodeRepositoryForCSharp.CQS
 
         int TotalPoint { get; set; }
 
-        public int AddTotalPoint(int addPoint)
+        public int GetTotalPoint()
         {
-            TotalPoint = ThanksPoint + ProfessionalPoint + SupportPoint + addPoint;
-            return  TotalPoint;
+            return TotalPoint;
+        }
+
+        public void SumTotalPoint()
+        {
+            TotalPoint = ThanksPoint + ProfessionalPoint + SupportPoint;
         }
     }
 }
