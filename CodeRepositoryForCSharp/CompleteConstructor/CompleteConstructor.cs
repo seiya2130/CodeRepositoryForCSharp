@@ -8,36 +8,25 @@ namespace CodeRepositoryForCSharp.CompleteConstructor
 {
     class CompleteConstructor : Controller
     {
-
         [HttpPost]
         public ActionResult RegisterSkill(RegisterSkillRequest registerSkillRequest)
         {
-            ValidateSkill(registerSkillRequest.Skill);
+            var skill = new Skill(registerSkillRequest.Skill.Score);
 
-            // 問題なければ登録処理
+            // 登録処理
 
             return View();
-        }
-
-        private void ValidateSkill(Skill skill)
-        {
-            if (skill.Score < 0)
-            {
-                throw new ValidationException("スコアが不正です");
-            }
         }
     }
 
     class RegisterSkillRequest
     {
         public Skill Skill { get; set; }
-
-
     }
 
     class Skill
     {
-        public int Score { get; set; }
+        public readonly int Score;
 
         public Skill(int score)
         {
