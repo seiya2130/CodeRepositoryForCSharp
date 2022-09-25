@@ -10,10 +10,10 @@ namespace CodeRepositoryForCSharp.CompleteConstructor
     {
 
         [HttpPost]
-        public ActionResult RegisterSkill(Skill skill)
+        public ActionResult RegisterSkill(RegisterSkillRequest registerSkillRequest)
         {
-            ValidateSkill(skill);
-            
+            ValidateSkill(registerSkillRequest.Skill);
+
             // 問題なければ登録処理
 
             return View();
@@ -30,12 +30,24 @@ namespace CodeRepositoryForCSharp.CompleteConstructor
 
     class RegisterSkillRequest
     {
-        public Skill skill { get; set; }
+        public Skill Skill { get; set; }
+
+
     }
 
     class Skill
     {
         public int Score { get; set; }
+
+        public Skill(int score)
+        {
+            if (score < 0)
+            {
+                throw new ValidationException("スコアが不正です");
+            }
+
+            Score = score;
+        }
     }
 
     class ValidationException : Exception
