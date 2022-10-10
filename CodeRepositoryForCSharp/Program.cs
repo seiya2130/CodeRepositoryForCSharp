@@ -24,6 +24,14 @@ namespace CodeRepositoryForCSharp
                 e.DisplaySalary();
             }
         }
+
+        public string GetErrorMessage(User user, bool isAlert)
+        {
+            if (isAlert) { return string.Empty; }
+            if (user == null) { return string.Empty; }
+            if (user.Name != "") { return string.Empty; }
+
+            return $"ユーザーの名前が不正です";
+        }
     }
 }
-
