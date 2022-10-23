@@ -6,6 +6,6 @@ namespace CodeRepositoryForCSharp.StrategyPattern
 {
     interface IUserType
     {
-        List<SkillMenu> GetSkillMenu();
+        List<UserMenu> GetUserMenu();
     }
 }

@@ -6,9 +6,9 @@ namespace CodeRepositoryForCSharp.StrategyPattern
 {
     class NormalUserType : IUserType
     {
-        public List<SkillMenu> GetSkillMenu()
+        public List<UserMenu> GetUserMenu()
         {
-            return new List<SkillMenu> { SkillMenu.Self };
+            return new List<UserMenu> { UserMenu.Self };
         }
     }
 }

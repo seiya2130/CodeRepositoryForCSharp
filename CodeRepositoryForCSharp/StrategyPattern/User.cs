@@ -9,7 +9,7 @@ namespace CodeRepositoryForCSharp.StrategyPattern
         public int Id { get; set; }
         public string Name { get; set; }
         public IUserType UserType { get; set; }
-        public List<SkillMenu> SkillMenuList { get; set; }
+        public List<UserMenu> UserMenuList { get; set; }
         public List<EvaluationMenu> EvaluationMenuList { get; set; }
 
         public User(int id, string name)
@@ -22,9 +22,9 @@ namespace CodeRepositoryForCSharp.StrategyPattern
             Console.WriteLine($"Hello, I'm {Name}");
         }
 
-        public void GetSkillMenu()
+        public void GetUserMenu()
         {
-            SkillMenuList =  UserType.GetSkillMenu();
+            UserMenuList =  UserType.GetUserMenu();
         }
     }
 
@@ -34,10 +34,10 @@ namespace CodeRepositoryForCSharp.StrategyPattern
         Admin
     }
 
-    enum SkillMenu
+    enum UserMenu
     {
         Self,
-        Analysis,
+        Admin,
         Setting
     }
 
