@@ -6,12 +6,11 @@ namespace CodeRepositoryForCSharp.StrategyPattern
 {
     class AdminUserType : IUserType
     {
-        public List<SkillMenu> GetSkillMenu()
+        public List<UserMenu> GetUserMenu()
         {
-            return new List<SkillMenu> { 
-                SkillMenu.Self, 
-                SkillMenu.Analysis, 
-                SkillMenu.Setting 
+            return new List<UserMenu> {  
+                UserMenu.Admin,
+                UserMenu.Setting
             };
         }
     }
