@@ -6,9 +6,9 @@ namespace CodeRepositoryForCSharp.CQS
 {
     class Point
     {
-        int ThanksPoint { get; set; }
-        int ProfessionalPoint { get; set; }
-        int SupportPoint { get; set; }
+        int NormalPoint { get; set; }
+        int EventPoint { get; set; }
+        int SeasonPoint { get; set; }
 
         int TotalPoint { get; set; }
 
@@ -19,7 +19,7 @@ namespace CodeRepositoryForCSharp.CQS
 
         public void SumTotalPoint()
         {
-            TotalPoint = ThanksPoint + ProfessionalPoint + SupportPoint;
+            TotalPoint = NormalPoint + EventPoint + SeasonPoint;
         }
     }
 }
