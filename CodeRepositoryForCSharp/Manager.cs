@@ -5,7 +5,7 @@ namespace CodeRepositoryForCSharp
 {
     public class Manager
     {
-        private readonly IEmployee employee;
+        private IEmployee employee;
 
         public Manager(IEmployee employee)
         {
@@ -14,7 +14,7 @@ namespace CodeRepositoryForCSharp
 
         public List<Employee> GetManagerEmployees()
         {
-            return employee.GetEmployees().Where(x => x.No.StartsWith("M")).ToList();
+            return this.employee.GetEmployees().Take(5).ToList();
         }
     }
 }

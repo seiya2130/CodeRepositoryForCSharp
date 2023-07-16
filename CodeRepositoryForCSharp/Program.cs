@@ -11,27 +11,21 @@ namespace CodeRepositoryForCSharp
     {
         static void Main(string[] args)
         {
-            var employeeDic = new Dictionary<int, IWorkStatus>()
-            {
-                { 1, new Full() },
-                { 2, new Short() },
-                { 3, new Leave() },
-            };
-
-            foreach (var employee in employeeDic)
-            {
-                var e = new Strategy.Employee(employee.Key, employee.Value);
-                e.DisplaySalary();
-            }
+            ISample1 sample1 = new ISample1();
+            sample1.Func();
         }
+    }
 
-        public string GetErrorMessage(User user, bool isAlert)
+    interface ISample1
+    {
+        public void Func();
+    }
+
+    class Sample1 : ISample1
+    {
+        public void Func()
         {
-            if (isAlert) { return string.Empty; }
-            if (user == null) { return string.Empty; }
-            if (user.Name != "") { return string.Empty; }
-
-            return $"ユーザーの名前が不正です";
+            Console.WriteLine("Sample1");
         }
     }
 }
