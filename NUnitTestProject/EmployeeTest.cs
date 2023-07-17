@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace NUnitTestProject
@@ -18,8 +19,6 @@ namespace NUnitTestProject
             };
 
             moq.Setup(x => x.GetEmployees()).Returns(mockEmployeeList);
-
-
         }
     }
 }
