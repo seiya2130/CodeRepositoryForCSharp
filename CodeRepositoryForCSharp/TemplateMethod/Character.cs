@@ -6,6 +6,7 @@ namespace CodeRepositoryForCSharp.TemplateMethod
 {
     public abstract class Character
     {
+        // 子クラスで上書きする
         public abstract string Name { get; }
         public abstract int AttackPoint { get; }
         public void Attack()
